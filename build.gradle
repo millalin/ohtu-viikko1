@@ -6,7 +6,7 @@
  * user guide available at https://guides.gradle.org/creating-new-gradle-builds/
  */
 
- plugins {
+plugins {
     id 'checkstyle'
 }
 
@@ -42,7 +42,7 @@ jar {
 apply plugin: "jacoco" 
 
 // Define the main class for the application
-mainClassName = 'ohtu.ohtuvarasto.Main'
+mainClassName = 'main.Main'
 
 jacocoTestReport {
     reports {
