@@ -13,19 +13,31 @@ public class Varasto {
         } else {
             this.tilavuus = 0.0;  // => käyttökelvoton varasto
         }
-        saldo = 0;     // oletus: varasto on tyhjä
+        saldo = 0; // oletus: varasto on tyhjä
     }
 
+    // muutetaan checkstyleä vastaavaksi ettei liian monia if-else haaroja
     public Varasto(double tilavuus, double alkuSaldo) { // kuormitetaan
+        alustaTilavuus(tilavuus);
+        alustaAlkusaldo(alkuSaldo);
+    }
+
+    public void alustaTilavuus(double tilavuus) {
         if (tilavuus > 0.0) {
             this.tilavuus = tilavuus;
+        } else {
+            this.tilavuus = 0.0; // => käyttökelvoton varasto
         }
+    }
+
+    public void alustaAlkusaldo(double alkuSaldo) {
+
         if (alkuSaldo < 0.0) {
             this.saldo = 0.0;
         } else if (alkuSaldo <= tilavuus) {
             this.saldo = alkuSaldo;
         } else {
-            this.saldo = tilavuus;  // täyteen ja ylimäärä hukkaan!
+            this.saldo = tilavuus; // täyteen ja ylimäärä hukkaan!
         }
     }
 
@@ -38,8 +50,8 @@ public class Varasto {
         return tilavuus;
     }
 
-    public double paljonkoMahtuu() {  // huom: ominaisuus voidaan myös laskea
-        return tilavuus - saldo;        //  ei tarvita erillistä kenttää vielaTilaa tms.
+    public double paljonkoMahtuu() { // huom: ominaisuus voidaan myös laskea
+        return tilavuus - saldo; // ei tarvita erillistä kenttää vielaTilaa tms.
     }
 
     // --- asettavat aksessorit eli setterit: ---
