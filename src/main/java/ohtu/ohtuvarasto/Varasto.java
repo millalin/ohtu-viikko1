@@ -3,15 +3,15 @@ package ohtu.ohtuvarasto;
 public class Varasto {
 
     // --- piilotettu tietorakenteen toteutus: ---
-    private double tilavuus;  // paljonko varastoon mahtuu,  > 0
-    private double saldo;     // paljonko varastossa on nyt, >= 0
+    private double tilavuus; // paljonko varastoon mahtuu, > 0
+    private double saldo; // paljonko varastossa on nyt, >= 0
 
     // --- konstruktorit: ---
-    public Varasto(double tilavuus) {  // tilavuus on annettava
+    public Varasto(double tilavuus) { // tilavuus on annettava
         if (tilavuus > 0.0) {
             this.tilavuus = tilavuus;
         } else {
-            this.tilavuus = 0.0;  // => käyttökelvoton varasto
+            this.tilavuus = 0.0; // => käyttökelvoton varasto
         }
         saldo = 0; // oletus: varasto on tyhjä
     }
