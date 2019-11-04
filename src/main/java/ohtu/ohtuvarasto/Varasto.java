@@ -1,7 +1,5 @@
 package ohtu.ohtuvarasto;
 
-import javax.swing.text.StyledEditorKit.ForegroundAction;
-
 public class Varasto {
 
     // --- piilotettu tietorakenteen toteutus: ---
@@ -21,8 +19,6 @@ public class Varasto {
     public Varasto(double tilavuus, double alkuSaldo) { // kuormitetaan
         if (tilavuus > 0.0) {
             this.tilavuus = tilavuus;
-        } else {
-            this.tilavuus = 0.0;  // => käyttökelvoton varasto
         }
         if (alkuSaldo < 0.0) {
             this.saldo = 0.0;
@@ -58,14 +54,11 @@ public class Varasto {
         }
     }
 
-   
     public double otaVarastosta(double maara) {
         if (maara < 0) {
             return 0.0; // tällainen pikapoistuminenkin!
         }
-        if (maara > saldo) 
-        
-        { // annetaan mitä voidaan
+        if (maara > saldo) { // annetaan mitä voidaan
             double kaikkiMitaVoidaan = saldo;
             saldo = 0.0; // ja tyhjäksi menee
             return kaikkiMitaVoidaan; // poistutaan saman tien
